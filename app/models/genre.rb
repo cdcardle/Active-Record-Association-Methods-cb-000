@@ -7,9 +7,7 @@ class Genre < ActiveRecord::Base
   end
 
   def artist_count
-    artists = []
-    self.songs.each {|song| artists << song.artist.name}
-    artists.uniq.count
+    self.all_artist_names.count
   end
 
   def all_artist_names
